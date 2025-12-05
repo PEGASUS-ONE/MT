@@ -19,15 +19,7 @@ public class Pi
         int[] pValues = {1, 2, 4, 8, 12, 16};
         int repeats = 5;
 
-        // STRONG
-        Experiments.initStrongCsv();
-        Experiments.runStrongScaling(pValues, 10_000_000, repeats);
-        Experiments.closeStrongCsv();
 
-        // WEAK
-        Experiments.initWeakCsv();
-        Experiments.runWeakScaling(pValues, 2_000_000, repeats);
-        Experiments.closeWeakCsv();
 
     }
 
