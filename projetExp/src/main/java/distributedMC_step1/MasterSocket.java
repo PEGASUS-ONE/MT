@@ -80,7 +80,7 @@ public class MasterSocket {
 	       tab_total_workers[i] = reader[i].readLine();      // read message from server
 	       System.out.println("Client sent: " + tab_total_workers[i]);
 	   }
-	   
+       total=0;
 	   // compute PI with the result of each workers
 	   for(int i = 0 ; i < numWorkers ; i++) {
 	       total += Integer.parseInt(tab_total_workers[i]);
