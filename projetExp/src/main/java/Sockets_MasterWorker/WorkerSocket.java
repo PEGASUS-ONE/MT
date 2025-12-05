@@ -1,4 +1,6 @@
-package distributedMC_step1;
+package Sockets_MasterWorker;
+
+import Pi.Master;
 
 import java.io.*;
 import java.net.*;
@@ -42,18 +44,14 @@ public class WorkerSocket {
                 System.out.println("TODO : compute Monte Carlo and send total");
 
                 // -----------------------------
-                //   BOUCLE MONTE CARLO
+                //   APPEL DE PI
                 // -----------------------------
-                int totalCount = Integer.parseInt(str);
-                int inside = 0;
 
-                for (int i = 0; i < totalCount; i++) {
-                    double x = rand.nextDouble();
-                    double y = rand.nextDouble();
-                    if (x*x + y*y <= 1.0)
-                        inside++;
-                }
-                // -----------------------------
+                int totalCount = Integer.parseInt(str);
+
+                // Master.doRun(totalCount, 1) (au tableau) : renvoi le nombre de points dans le cercle
+                long inside = new Master().doRun(totalCount, 1);
+
 
                 pWrite.println(inside);   // send number of points inside quarter disk
 

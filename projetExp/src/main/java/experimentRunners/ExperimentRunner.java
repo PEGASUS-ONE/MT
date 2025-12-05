@@ -1,4 +1,6 @@
-package assignments;
+package experimentRunners;
+
+import assignments.PiMonteCarlo;
 
 import java.io.FileWriter;
 import java.util.Arrays;
